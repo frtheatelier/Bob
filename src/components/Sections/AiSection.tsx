@@ -5,12 +5,15 @@ import './App.css';
 import Questions, {questionSchema} from "../Questions";
 import { set } from 'react-hook-form';
 
-interface HardcodedSectionProps {
+import QuestionAttributes from '../../models/QuestionAttributes';
+
+interface AiSectionProps {
+    questions: QuestionAttributes[];
     onSubmit: (answers: {[key: string]: string}) => void;
 }
 
-const HardcodedSection: React.FC<HardcodedSectionProps> = ({ onSubmit }) => {
-    const [answers, setAnswers] = React.useState<{[key: string]: string}>({});
+const AiSection: React.FC<AiSectionProps> = ({ questions, onSubmit }) => {
+const [answers, setAnswers] = React.useState<{[key: string]: string}>({});
     // const [results, setResults] = React.useState<string | null>(null);
 
     const handleChange = (name: string, value: string) => {
@@ -24,11 +27,11 @@ const HardcodedSection: React.FC<HardcodedSectionProps> = ({ onSubmit }) => {
 
     return (
         <div className="form-container">
-          <p>Based on your understanding of the entity Bob, answer the following questions. There are no right or wrong answers.</p>
-          <h2>1. Observability</h2>
+          <p>Based on how you answered the previous section, here are follow up questions to better understand your idea of Bob</p>
+          <h2>2. Extended questions</h2>
           <form className="form">
             
-            {questionSchema.map((question) => (
+            {questions.map((question) => (
               <Questions key={question.name} {...question} onChange={handleChange} />
             ))}
 
@@ -38,5 +41,4 @@ const HardcodedSection: React.FC<HardcodedSectionProps> = ({ onSubmit }) => {
     );
 };
 
-export default HardcodedSection;
-// export {HardcodedSectionProps};
+export default AiSection;
