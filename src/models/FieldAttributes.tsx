@@ -13,6 +13,7 @@ interface BaseFieldAttributes {
 
 interface TextFieldAttributes extends BaseFieldAttributes {
     type: FieldType.TEXT;
+    onChange?: (name: string, value: string) => void;
 }
 
 interface SelectFieldAttributes extends BaseFieldAttributes {
@@ -21,6 +22,7 @@ interface SelectFieldAttributes extends BaseFieldAttributes {
         label: string;
         value: string
     }[];
+    onChange?: (name: string, value: string) => void;
 }
 
 interface RadioFieldAttributes extends BaseFieldAttributes {
@@ -29,6 +31,7 @@ interface RadioFieldAttributes extends BaseFieldAttributes {
         label: string;
         value: string
     }[];
+    onChange?: (name: string, value: string) => void;
 }
 
 interface CheckboxFieldAttributes extends BaseFieldAttributes {

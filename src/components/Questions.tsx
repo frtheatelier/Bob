@@ -20,6 +20,7 @@ const Questions: React.FC<QuestionAttributes> = (props) => {
                         { label: "Yes", value: "yes" },
                         { label: "No", value: "no" },
                     ]}
+                    onChange={props.onChange}
 
                     type={FieldType.RADIO}
                 />

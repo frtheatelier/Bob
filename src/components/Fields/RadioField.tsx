@@ -1,7 +1,7 @@
 import React from 'react';
 import { RadioFieldAttributes } from '../../models/FieldAttributes';
 
-const RadioField: React.FC<RadioFieldAttributes> = ({ name, label, options }) => {
+const RadioField: React.FC<RadioFieldAttributes> = ({ name, label, options, onChange }) => {
     return (
         <div>
             <label>{label}</label>
@@ -12,6 +12,7 @@ const RadioField: React.FC<RadioFieldAttributes> = ({ name, label, options }) =>
                         id={`${name}-${option.value}`}
                         name={name}
                         value={option.value}
+                        onChange={() => onChange?.(name, option.value)}
                     />
                     <label htmlFor={`${name}-${option.value}`}>{option.label}</label>
                 </div>
