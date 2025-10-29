@@ -2,11 +2,6 @@
 import React from 'react';
 import './App.css';
 
-import Questions, {questionSchema} from "../Questions";
-import { set } from 'react-hook-form';
-
-import QuestionAttributes from '../../models/QuestionAttributes';
-
 interface ResultSectionProps {
     summary: string;
 }

@@ -28,18 +28,4 @@ const Questions: React.FC<QuestionAttributes> = (props) => {
     }
 };
 
-const questionSchema: QuestionAttributes[] = [
-    {
-        name: "observableEntity",
-        questionText: "Bob is an observable entity",
-        type: QuestionType.YESNO,
-    },
-    {
-        name: "complexSystem",
-        questionText: "Bob is a complex system",
-        type: QuestionType.YESNO,
-    },
-];
-
 export default Questions;
-export {questionSchema};

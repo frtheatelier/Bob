@@ -8,7 +8,9 @@ import {FieldType} from "./models/FieldAttributes";
 import RadioField from "./components/Fields/RadioField";
 
 import QuestionAttributes, {QuestionType} from "./models/QuestionAttributes";
-import Questions, {questionSchema} from "./components/Questions";
+import Questions from "./components/Questions";
+import { questionSchemaHardcode } from './QuestionSchemas';
+
 
 function App() {
   const [result, setResult] = React.useState<string | null>(null);
@@ -21,7 +23,7 @@ function App() {
           <h2>1. Observability</h2>
           <form className="form">
             
-            {questionSchema.map((question) => (
+            {questionSchemaHardcode.map((question) => (
               <Questions key={question.name} {...question} />
             ))}
 

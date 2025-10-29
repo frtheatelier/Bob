@@ -2,7 +2,8 @@
 import React from 'react';
 import './App.css';
 
-import Questions, {questionSchema} from "../Questions";
+import Questions from "../Questions";
+import { questionSchemaHardcode } from '../../QuestionSchemas';
 import { set } from 'react-hook-form';
 
 interface HardcodedSectionProps {
@@ -28,7 +29,7 @@ const HardcodedSection: React.FC<HardcodedSectionProps> = ({ onSubmit }) => {
           <h2>1. Observability</h2>
           <form className="form">
             
-            {questionSchema.map((question) => (
+            {questionSchemaHardcode.map((question) => (
               <Questions key={question.name} {...question} onChange={handleChange} />
             ))}
 

@@ -2,8 +2,7 @@
 import React from 'react';
 import './App.css';
 
-import Questions, {questionSchema} from "../Questions";
-import { set } from 'react-hook-form';
+import Questions from "../Questions";
 
 import QuestionAttributes from '../../models/QuestionAttributes';
 
